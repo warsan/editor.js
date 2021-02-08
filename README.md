@@ -12,13 +12,13 @@
 | --------- | --------- | --------- | --------- | --------- | --------- |
 | Edge 12+ | Firefox 18+ | Chrome 49+ | Safari 10+ | Safari 10+ | Opera 36+
 
-## If you like a project 💗💗💗
+## Если тебе нравится проект 💗💗💗
 
-If you like Editor.js you can support project improvements and development of new features with a donation to our collective.
+Если вам нравится Editor.js, вы можете поддержать улучшения проекта и разработку новых функций, сделав пожертвование нашему коллективу.
 
  👉  [https://opencollective.com/editorjs](https://opencollective.com/editorjs)
 
-### Sponsors
+### Спонсоры
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/editorjs#sponsor)]
 
