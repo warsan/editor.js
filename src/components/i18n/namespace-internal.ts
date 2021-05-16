@@ -3,10 +3,10 @@ import { DictNamespaces } from '../../types-internal/i18n-internal-namespace';
 import { isObject, isString } from '../utils';
 
 /**
- * Evaluate messages dictionary and return object for namespace chaining
+ * Оценка словаря сообщений и возвращаемого объекта для цепочки пространств имён
  *
- * @param dict - Messages dictionary
- * @param [keyPath] - subsection path (used in recursive call)
+ * @param dict - Словарь сообщений
+ * @param [keyPath] - путь к подразделу (используется в рекурсивном вызове)
  */
 function getNamespaces(dict: object, keyPath?: string): DictNamespaces<typeof defaultDictionary> {
   const result = {};
@@ -16,14 +16,14 @@ function getNamespaces(dict: object, keyPath?: string): DictNamespaces<typeof de
       const newPath = keyPath ? `${keyPath}.${key}` : key;
 
       /**
-       * Check current section values, if all of them are strings, so there is the last section
+       * Проверьте текущие значения разделов, если все они являются строками, поэтому есть последний раздел
        */
       const isLastSection = Object.values(section).every((sectionValue) => {
         return isString(sectionValue);
       });
 
       /**
-       * In last section, we substitute namespace path instead of object with translates
+       * В последнем разделе мы заменяем путь к пространству имён вместо объекта на translates
        *
        * ui.toolbar.toolbox – "ui.toolbar.toolbox"
        * instead of
@@ -45,8 +45,8 @@ function getNamespaces(dict: object, keyPath?: string): DictNamespaces<typeof de
 }
 
 /**
- * Type safe access to the internal messages dictionary sections
+ * Введите безопасный доступ к разделам словаря внутренних сообщений
  *
- * @example I18n.ui(I18nInternalNS.ui.blockTunes.toggler, 'Click to tune');
+ * @example I18n.ui(I18nInternalNS.ui.blockTunes.toggler, 'Нажмите, чтобы настроить');
  */
 export const I18nInternalNS = getNamespaces(defaultDictionary);
