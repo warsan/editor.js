@@ -3,66 +3,66 @@ import { I18nDictionary, Dictionary } from '../../../types/configs';
 import { LeavesDictKeys } from '../../types-internal/i18n-internal-namespace';
 
 /**
- * Type for all available internal dictionary strings
+ * Тип для всех доступных строк внутреннего словаря
  */
 type DictKeys = LeavesDictKeys<typeof defaultDictionary>;
 
 /**
- * This class will responsible for the translation through the language dictionary
+ * Этот класс будет отвечать за перевод через словарь языка
  */
 export default class I18n {
   /**
-   * Property that stores messages dictionary
+   * Свойство, в котором хранится словарь сообщений
    */
   private static currentDictionary: I18nDictionary = defaultDictionary;
 
   /**
-   * Type-safe translation for internal UI texts:
-   * Perform translation of the string by namespace and a key
+   * Типобезопасный перевод для внутренних текстов пользовательского интерфейса:
+   * Выполните перевод строки по пространству имён и ключу
    *
-   * @example I18n.ui(I18nInternalNS.ui.blockTunes.toggler, 'Click to tune')
+   * @example I18n.ui(I18nInternalNS.ui.blockTunes.toggler, 'Нажмите, чтобы настроить')
    *
-   * @param internalNamespace - path to translated string in dictionary
-   * @param dictKey - dictionary key. Better to use default locale original text
+   * @param internalNamespace - путь к переведённой строке в словаре
+   * @param dictKey - ключ словаря. Лучше использовать исходный текст локали по умолчанию
    */
   public static ui(internalNamespace: string, dictKey: DictKeys): string {
     return I18n._t(internalNamespace, dictKey);
   }
 
   /**
-   * Translate for external strings that is not presented in default dictionary.
-   * For example, for user-specified tool names
+   * Перевод для внешних строк, которые не представлены в словаре по умолчанию.
+   * Например, для имён инструментов, заданных пользователем
    *
-   * @param namespace - path to translated string in dictionary
-   * @param dictKey - dictionary key. Better to use default locale original text
+   * @param namespace - путь к переведённой строке в словаре
+   * @param dictKey - ключ словаря. Лучше использовать исходный текст локали по умолчанию
    */
   public static t(namespace: string, dictKey: string): string {
     return I18n._t(namespace, dictKey);
   }
 
   /**
-   * Adjust module for using external dictionary
+   * Настроить модуль для использования внешнего словаря
    *
-   * @param dictionary - new messages list to override default
+   * @param dictionary - список новых сообщений для переопределения по умолчанию
    */
   public static setDictionary(dictionary: I18nDictionary): void {
     I18n.currentDictionary = dictionary;
   }
 
   /**
-   * Perform translation both for internal and external namespaces
-   * If there is no translation found, returns passed key as a translated message
+   * Выполнение перевода как для внутренних, так и для внешних пространств имён
+   * Если перевод не найден, возвращает переданный ключ в виде переведённого сообщения
    *
-   * @param namespace - path to translated string in dictionary
-   * @param dictKey - dictionary key. Better to use default locale original text
+   * @param namespace - путь к переведённой строке в словаре
+   * @param dictKey - ключ словаря. Лучше использовать исходный текст локали по умолчанию
    */
   private static _t(namespace: string, dictKey: string): string {
     const section = I18n.getNamespace(namespace);
 
     /**
-     * For Console Message to Check Section is defined or not
+     * Для сообщения консоли, чтобы проверить Раздел определён или нет
      * if (section === undefined) {
-     *  _.logLabeled('I18n: section %o was not found in current dictionary', 'log', namespace);
+     *  _.logLabeled('I18n: раздел %o не найден в текущем словаре', 'log', пространства имён);
      * }
      */
 
@@ -74,9 +74,9 @@ export default class I18n {
   }
 
   /**
-   * Find messages section by namespace path
+   * Найти раздел сообщений по пути к пространству имён
    *
-   * @param namespace - path to section
+   * @param namespace - путь к разделу
    */
   private static getNamespace(namespace: string): Dictionary {
     const parts = namespace.split('.');
