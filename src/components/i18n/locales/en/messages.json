@@ -2,44 +2,44 @@
   "ui": {
     "blockTunes": {
       "toggler": {
-        "Click to tune": "",
-        "or drag to move": ""
+        "Нажмите, чтобы настроить": "",
+        "или перетащите для перемещения": ""
       }
     },
     "inlineToolbar": {
       "converter": {
-        "Convert to": ""
+        "Преобразовать в": ""
       }
     },
     "toolbar": {
       "toolbox": {
-        "Add": ""
+        "Добавь": ""
       }
     }
   },
   "toolNames": {
-    "Text": "",
-    "Link": "",
-    "Bold": "",
-    "Italic": ""
+    "Текст": "",
+    "Ссылка": "",
+    "Жирный": "",
+    "Курсивный": ""
   },
   "tools": {
     "link": {
-      "Add a link": ""
+      "Добавить ссылку": ""
     },
     "stub": {
-      "The block can not be displayed correctly.": ""
+      "Блок не может быть отображён правильно.": ""
     }
   },
   "blockTunes": {
     "delete": {
-      "Delete": ""
+      "Удалить": ""
     },
     "moveUp": {
-      "Move up": ""
+      "Двигаться вверх": ""
     },
     "moveDown": {
-      "Move down": ""
+      "Двигаться вниз": ""
     }
   }
 }
