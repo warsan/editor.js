@@ -1,11 +1,11 @@
 /**
- * Class Util
+ * Класс Util
  */
 
 import Dom from './dom';
 
 /**
- * Possible log levels
+ * Возможные уровни журнала
  */
 export enum LogLevels {
   VERBOSE = 'VERBOSE',
@@ -15,14 +15,14 @@ export enum LogLevels {
 }
 
 /**
- * Allow to use global VERSION, that will be overwritten by Webpack
+ * Разрешить использовать глобальную ВЕРСИЮ, которая будет перезаписана Webpack
  */
 declare const VERSION: string;
 
 /**
  * @typedef {object} ChainData
- * @property {object} data - data that will be passed to the success or fallback
- * @property {Function} function - function's that must be called asynchronously
+ * @property {object} data - данные, которые будут переданы успешному или резервному варианту
+ * @property {Function} function - функции, которые должны вызываться асинхронно
  *
  * @interface ChainData
  */
@@ -37,7 +37,7 @@ export interface ChainData {
  */
 
 /**
- * Returns basic keycodes as constants
+ * Возвращает основные коды ключей в качестве констант
  *
  * @returns {{}}
  */
@@ -59,7 +59,7 @@ export const keyCodes = {
 };
 
 /**
- * Return mouse buttons codes
+ * Возврат кодов кнопок мыши
  */
 export const mouseButtons = {
   LEFT: 0,
@@ -70,13 +70,13 @@ export const mouseButtons = {
 };
 
 /**
- * Custom logger
+ * Пользовательский регистратор
  *
- * @param {boolean} labeled — if true, Editor.js label is shown
- * @param {string} msg  - message
- * @param {string} type - logging type 'log'|'warn'|'error'|'info'
- * @param {*} [args]      - argument to log with a message
- * @param {string} style  - additional styling to message
+ * @param {boolean} labeled — если это правда, Editor.js метка показана
+ * @param {string} msg  - сообщение
+ * @param {string} type - тип ведения журнала 'log'|'warn'|'error'|'info'
+ * @param {*} [args]      - аргумент для входа с сообщением
+ * @param {string} style  - дополнительный стиль к сообщению
  */
 function _log(
   labeled: boolean,
@@ -150,33 +150,33 @@ function _log(
 }
 
 /**
- * Current log level
+ * Текущий уровень журнала
  */
 _log.logLevel = LogLevels.VERBOSE;
 
 /**
- * Set current log level
+ * Установить текущий уровень журнала
  *
- * @param {LogLevels} logLevel - log level to set
+ * @param {LogLevels} logLevel - уровень журнала для установки
  */
 export function setLogLevel(logLevel: LogLevels): void {
   _log.logLevel = logLevel;
 }
 
 /**
- * _log method proxy without Editor.js label
+ * _log метод прокси без Editor.js этикетки
  */
 export const log = _log.bind(window, false);
 
 /**
- * _log method proxy with Editor.js label
+ * _log метод прокси с Editor.js этикеткой
  */
 export const logLabeled = _log.bind(window, true);
 
 /**
- * Return string representation of the object type
+ * Возвращаемое строковое представление типа объекта
  *
- * @param {*} object - object to get type
+ * @param {*} object - объект для получения типа
  *
  * @returns {string}
  */
@@ -186,9 +186,9 @@ export function typeOf(object: any): string {
 }
 
 /**
- * Check if passed variable is a function
+ * Проверьте, является ли передаваемая переменная функцией
  *
- * @param {*} fn - function to check
+ * @param {*} fn - функция для проверки
  *
  * @returns {boolean}
  */
@@ -198,9 +198,9 @@ export function isFunction(fn: any): fn is Function {
 }
 
 /**
- * Checks if passed argument is an object
+ * Проверяет, является ли переданный аргумент объектом
  *
- * @param {*} v - object to check
+ * @param {*} v - объект для проверки
  *
  * @returns {boolean}
  */
@@ -210,9 +210,9 @@ export function isObject(v: any): v is object {
 }
 
 /**
- * Checks if passed argument is a string
+ * Проверяет, является ли переданный аргумент строкой
  *
- * @param {*} v - variable to check
+ * @param {*} v - переменная для проверки
  *
  * @returns {boolean}
  */
@@ -222,9 +222,9 @@ export function isString(v: any): v is string {
 }
 
 /**
- * Checks if passed argument is boolean
+ * Проверяет, является ли переданный аргумент логическим
  *
- * @param {*} v - variable to check
+ * @param {*} v - переменная для проверки
  *
  * @returns {boolean}
  */
@@ -234,9 +234,9 @@ export function isBoolean(v: any): v is boolean {
 }
 
 /**
- * Checks if passed argument is number
+ * Проверяет, является ли переданный аргумент числом
  *
- * @param {*} v - variable to check
+ * @param {*} v - переменная для проверки
  *
  * @returns {boolean}
  */
@@ -246,9 +246,9 @@ export function isNumber(v: any): v is number {
 }
 
 /**
- * Checks if passed argument is undefined
+ * Проверяет, не определен ли переданный аргумент
  *
- * @param {*} v - variable to check
+ * @param {*} v - переменная для проверки
  *
  * @returns {boolean}
  */
@@ -258,9 +258,9 @@ export function isUndefined(v: any): v is undefined {
 }
 
 /**
- * Check if passed function is a class
+ * Проверьте, является ли переданная функция классом
  *
- * @param {Function} fn - function to check
+ * @param {Function} fn - функция для проверки
  *
  * @returns {boolean}
  */
@@ -270,9 +270,9 @@ export function isClass(fn: any): boolean {
 }
 
 /**
- * Checks if object is empty
+ * Проверяет, пуст ли объект
  *
- * @param {object} object - object to check
+ * @param {object} object - объект для проверки
  *
  * @returns {boolean}
  */
@@ -285,7 +285,7 @@ export function isEmpty(object: object): boolean {
 }
 
 /**
- * Check if passed object is a Promise
+ * Проверьте, является ли переданный объект обещанием
  *
  * @param  {*}  object - object to check
  * @returns {boolean}
@@ -296,28 +296,28 @@ export function isPromise(object: any): object is Promise<any> {
 }
 
 /**
- * Returns true if passed key code is printable (a-Z, 0-9, etc) character.
+ * Возвращает true, если переданный код ключа является печатаемым (a-Z, 0-9 и т. д.) символом.
  *
- * @param {number} keyCode - key code
+ * @param {number} keyCode - код ключа
  *
  * @returns {boolean}
  */
 export function isPrintableKey(keyCode: number): boolean {
-  return (keyCode > 47 && keyCode < 58) || // number keys
-    keyCode === 32 || keyCode === 13 || // Spacebar & return key(s)
-    keyCode === 229 || // processing key input for certain languages — Chinese, Japanese, etc.
-    (keyCode > 64 && keyCode < 91) || // letter keys
-    (keyCode > 95 && keyCode < 112) || // Numpad keys
-    (keyCode > 185 && keyCode < 193) || // ;=,-./` (in order)
-    (keyCode > 218 && keyCode < 223); // [\]' (in order)
+  return (keyCode > 47 && keyCode < 58) || // цифровые клавиши
+    keyCode === 32 || keyCode === 13 || // Пробел и клавиша возврата(ы)
+    keyCode === 229 || // обработка ввода ключей для определенных языков — китайского, японского и т.д.
+    (keyCode > 64 && keyCode < 91) || // буквенные ключи
+    (keyCode > 95 && keyCode < 112) || // Клавиши цифровой клавиатуры
+    (keyCode > 185 && keyCode < 193) || // ;=,-./` (в порядке)
+    (keyCode > 218 && keyCode < 223); // [\]' (в порядке)
 }
 
 /**
- * Fires a promise sequence asynchronously
+ * Запускает последовательность обещаний асинхронно
  *
- * @param {ChainData[]} chains - list or ChainData's
- * @param {Function} success - success callback
- * @param {Function} fallback - callback that fires in case of errors
+ * @param {ChainData[]} chains - список или ChainData's
+ * @param {Function} success - успешный обратный вызов
+ * @param {Function} fallback - обратный вызов, который срабатывает в случае ошибок
  *
  * @returns {Promise}
  */
@@ -329,12 +329,12 @@ export async function sequence(
   fallback: (data: object) => void = (): void => {}
 ): Promise<void> {
   /**
-   * Decorator
+   * Оформитель
    *
-   * @param {ChainData} chainData - Chain data
+   * @param {ChainData} chainData - Цепные данные
    *
-   * @param {Function} successCallback - success callback
-   * @param {Function} fallbackCallback - fail callback
+   * @param {Function} successCallback - успешный обратный вызов
+   * @param {Function} fallbackCallback - сбой обратного вызова
    *
    * @returns {Promise}
    */
@@ -352,11 +352,11 @@ export async function sequence(
   }
 
   /**
-   * pluck each element from queue
-   * First, send resolved Promise as previous value
-   * Each plugins "prepare" method returns a Promise, that's why
-   * reduce current element will not be able to continue while can't get
-   * a resolved Promise
+   * выдерните каждый элемент из очереди
+   * Во-первых, отправьте разрешённое обещание в качестве предыдущего значения
+   * Каждый метод "подготовки" плагинов возвращает обещание, 
+   * вот почему текущий элемент не сможет продолжить работу, 
+   * пока не сможет получить разрешённое обещание
    */
   return chains.reduce(async (previousValue, currentValue) => {
     await previousValue;
@@ -366,9 +366,9 @@ export async function sequence(
 }
 
 /**
- * Make array from array-like collection
+ * Сделать массив из коллекции, подобной массиву
  *
- * @param {ArrayLike} collection - collection to convert to array
+ * @param {ArrayLike} коллекция - коллекция для преобразования в массив
  *
  * @returns {Array}
  */
@@ -378,10 +378,10 @@ export function array(collection: ArrayLike<any>): any[] {
 }
 
 /**
- * Delays method execution
+ * Задержки выполнения метода
  *
- * @param {Function} method - method to execute
- * @param {number} timeout - timeout in ms
+ * @param {Function} method - способ выполнения
+ * @param {number} timeout - тайм-аут в мс
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function delay(method: (...args: any[]) => any, timeout: number) {
@@ -396,7 +396,7 @@ export function delay(method: (...args: any[]) => any, timeout: number) {
 }
 
 /**
- * Get file extension
+ * Получить расширение файла
  *
  * @param {File} file - file
  *
@@ -407,9 +407,9 @@ export function getFileExtension(file: File): string {
 }
 
 /**
- * Check if string is MIME type
+ * Проверьте, является ли строка типом MIME
  *
- * @param {string} type - string to check
+ * @param {string} type - строка для проверки
  *
  * @returns {boolean}
  */
@@ -418,14 +418,14 @@ export function isValidMimeType(type: string): boolean {
 }
 
 /**
- * Debouncing method
- * Call method after passed time
+ * Способ демонтажа
+ * Вызов метода по прошествии времени
  *
- * Note that this method returns Function and declared variable need to be called
+ * Обратите внимание, что этот метод возвращает функцию и объявленную переменную, которые необходимо вызвать
  *
- * @param {Function} func - function that we're throttling
- * @param {number} wait - time in milliseconds
- * @param {boolean} immediate - call now
+ * @param {Function} func - функция, которую мы регулируем
+ * @param {number} wait - время в миллисекундах
+ * @param {boolean} immediate - звоните прямо сейчас
  * @returns {Function}
  */
 export function debounce(func: () => void, wait?: number, immediate?: boolean): () => void {
@@ -456,9 +456,9 @@ export function debounce(func: () => void, wait?: number, immediate?: boolean): 
 }
 
 /**
- * Copies passed text to the clipboard
+ * Копирует переданный текст в буфер обмена
  *
- * @param text - text to copy
+ * @param text - текст для копирования
  */
 export function copyTextToClipboard(text): void {
   const el = Dom.make('div', 'codex-editor-clipboard', {
@@ -480,7 +480,7 @@ export function copyTextToClipboard(text): void {
 }
 
 /**
- * Returns object with os name as key and boolean as value. Shows current user OS
+ * Возвращает объект с именем ОС в качестве ключа и логическим значением в качестве значения. Показывает текущую ОС пользователя
  */
 export function getUserOS(): {[key: string]: boolean} {
   const OS = {
@@ -502,9 +502,9 @@ export function getUserOS(): {[key: string]: boolean} {
 }
 
 /**
- * Capitalizes first letter of the string
+ * Заглавная буква первой буквы строки
  *
- * @param {string} text - text to capitalize
+ * @param {string} text - текст с заглавной буквы
  *
  * @returns {string}
  */
@@ -513,10 +513,10 @@ export function capitalize(text: string): string {
 }
 
 /**
- * Merge to objects recursively
+ * Рекурсивное слияние с объектами
  *
- * @param {object} target - merge target
- * @param {object[]} sources - merge sources
+ * @param {object} target - цель слияния
+ * @param {object[]} sources - объединить источники
  * @returns {object}
  */
 export function deepMerge<T extends object>(target, ...sources): T {
@@ -543,10 +543,10 @@ export function deepMerge<T extends object>(target, ...sources): T {
 }
 
 /**
- * Return true if current device supports touch events
+ * Возвращает true, если текущее устройство поддерживает события касания
  *
- * Note! This is a simple solution, it can give false-positive results.
- * To detect touch devices more carefully, use 'touchstart' event listener
+ * Обратите внимание! Это простое решение, оно может дать ложноположительные результаты.
+ * Для более тщательного обнаружения сенсорных устройств используйте прослушиватель событий 'touchstart'
  *
  * @see http://www.stucox.com/blog/you-cant-detect-a-touchscreen/
  *
@@ -555,7 +555,7 @@ export function deepMerge<T extends object>(target, ...sources): T {
 export const isTouchSupported: boolean = 'ontouchstart' in document.documentElement;
 
 /**
- * Make shortcut command more human-readable
+ * Сделайте команду быстрого доступа более удобочитаемой для человека
  *
  * @param {string} shortcut — string like 'CMD+B'
  */
@@ -585,9 +585,9 @@ export function beautifyShortcut(shortcut: string): string {
 }
 
 /**
- * Returns valid URL. If it is going outside and valid, it returns itself
- * If url has `one slash`, then it concatenates with window location origin
- * or when url has `two lack` it appends only protocol
+ * Возвращает действительный URL-адрес. Если он выходит наружу и действителен, он возвращается сам
+ * Если URL-адрес имеет "одну косую черту", то он связывается с источником расположения окна
+ * или когда url имеет "два недостатка", он добавляет только протокол
  *
  * @param {string} url - url to prettify
  */
@@ -597,7 +597,7 @@ export function getValidUrl(url: string): string {
 
     return urlObject.href;
   } catch (e) {
-    // do nothing but handle below
+    // не делайте ничего, кроме обработки ниже
   }
 
   if (url.substring(0, 2) === '//') {
@@ -608,18 +608,18 @@ export function getValidUrl(url: string): string {
 }
 
 /**
- * Opens new Tab with passed URL
+ * Открывает новую вкладку с переданным URL-адресом
  *
- * @param {string} url - URL address to redirect
+ * @param {string} url - URL-адрес для перенаправления
  */
 export function openTab(url: string): void {
   window.open(url, '_blank');
 }
 
 /**
- * Returns random generated identifier
+ * Возвращает случайно сгенерированный идентификатор
  *
- * @param {string} prefix - identifier prefix
+ * @param {string} prefix - префикс идентификатора
  *
  * @returns {string}
  */
@@ -629,14 +629,14 @@ export function generateId(prefix = ''): string {
 }
 
 /**
- * Common method for printing a warning about the usage of deprecated property or method.
+ * Общий метод печати предупреждения об использовании устаревшего свойства или метода.
  *
- * @param condition - condition for deprecation.
- * @param oldProperty - deprecated property.
- * @param newProperty - the property that should be used instead.
+ * @param condition - условие для устаревания.
+ * @param oldProperty - устаревшее свойство.
+ * @param newProperty - свойство, которое следует использовать вместо этого.
  */
 export function deprecationAssert(condition: boolean, oldProperty: string, newProperty: string): void {
-  const message = `«${oldProperty}» is deprecated and will be removed in the next major release. Please use the «${newProperty}» instead.`;
+  const message = `«${oldProperty}» является устаревшим и будет удален в следующем крупном выпуске. Пожалуйста, используйте вместо этого «${newProperty}».`;
 
   if (condition) {
     logLabeled(message, 'warn');
