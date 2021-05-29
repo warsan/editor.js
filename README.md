@@ -20,79 +20,80 @@
 
 ### Спонсоры
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/editorjs#sponsor)]
+Поддержите этот проект, став спонсором. Ваш логотип появится здесь со ссылкой на ваш сайт. [[Стать спонсором](https://opencollective.com/editorjs#sponsor)]
 
 <a href="https://opencollective.com/editorjs/sponsor/0/website" target="_blank"><img src="https://opencollective.com/editorjs/sponsor/0/avatar.svg"></a>
 
- ### Backers
+ ### Поддержавшие
 
- Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/editorjs#backer)]
+ Спасибо всем нашим спонсорам! 🙏 [[Станьте спонсором](https://opencollective.com/editorjs#backer)]
 
  <a href="https://opencollective.com/editorjs#backers" target="_blank"><img src="https://opencollective.com/editorjs/backers.svg?width=890"></a>
 
-### Contributors
+### Вкладчики
 
-This project exists thanks to all the people who contribute. <img src="https://opencollective.com/editorjs/contributors.svg?width=890&button=false" />
+Этот проект существует благодаря всем людям, которые вносят свой вклад. <img src="https://opencollective.com/editorjs/contributors.svg?width=890&button=false" />
 
-We really welcome new contributors. If you want to make some code with us, please take a look at the [Good First Tasks](https://github.com/codex-team/editor.js/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+task%22). You can write to us on `team@codex.so` or via special [Telegram chat](https://t.me/editorjsdev), or any other way.
+Мы очень рады новым участникам. Если вы хотите делать код вместе с нами, пожалуйста, взгляните на [Первые хорошие задания](https://github.com/codex-team/editor.js/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+task%22). Вы можете написать нам на `team@codex.so` или через специальный [Telegram-чат](https://t.me/editorjsdev), или любым другим способом.
 
-## Documentation
+## Документация
 
-Please visit [https://editorjs.io/](https://editorjs.io) to view all documentation articles.
+Посетите [https://editorjs.io/](https://editorjs.io) для просмотра всех статей документации.
 
-- [Base concepts](https://editorjs.io/base-concepts)
-- [Getting started](https://editorjs.io/getting-started)
-- [Configuration](https://editorjs.io/configuration)
-- [How to create a Block Tool Plugin](https://editorjs.io/creating-a-block-tool)
-- [How to create an Inline Tool Plugin](https://editorjs.io/creating-an-inline-tool)
-- [API for Tools](https://editorjs.io/tools-api)
+- [Базовые концепции](https://editorjs.io/base-concepts)
+- [Начало работы](https://editorjs.io/getting-started)
+- [Конфигурация](https://editorjs.io/configuration)
+- [Как создать Block Tool Plugin](https://editorjs.io/creating-a-block-tool)
+- [Как создать плагин встроенного инструмента](https://editorjs.io/creating-an-inline-tool)
+- [API для инструментов](https://editorjs.io/tools-api)
 
 You can join a [Gitter-channel](https://gitter.im/codex-team/editor.js) or [Telegram-chat](//t.me/codex_editor) and ask a question.
+Вы можете присоединиться к [Gitter-каналу](https://gitter.im/codex-team/editor.js) или [Telegram-чату](//t.me/codex_editor) и задать вопрос.
 
-## Changelog
+## Список изменений
 
-See the whole [Changelog](/docs/CHANGELOG.md)
+См. весь [Список изменений](/docs/CHANGELOG.md)
 
-## How to use Editor.js
+## Как использовать Editor.js
 
-### Basics
+### Основы
 
-Editor.js is a Block-Styled editor. Blocks are structural units, of which the Entry is composed.
-For example, `Paragraph`, `Heading`, `Image`, `Video`, `List` are Blocks. Each Block is represented by Plugin.
-We have [many](http://github.com/editor-js/) ready-to-use Plugins and a [simple API](https://editorjs.io/tools-api) for creating new ones.
+Editor.js - это редактор с блочным стилем. Блоки - это структурные единицы, из которых состоит Entry.
+Например, "Абзац", `Заголовок`, `Изображение`, `Видео`, `Список` - это блоки. Каждый блок представлен плагином.
+У нас есть [множество](http://github.com/editor-js/) готовых к использованию Плагинов и [простой API](https://editorjs.io/tools-api) для создания новых.
 
-How to use the Editor after [Installation](https://editorjs.io/getting-started).
+Как использовать редактор после [установки](https://editorjs.io/getting-started).
 
-- Create new Blocks by pressing Enter or clicking the Plus Button
-- Press `TAB` or click on the Plus Button to view the Toolbox
-- Press `TAB` again to leaf Toolbox and select a Block you need. Then press Enter.
+- Создавайте новые блоки, нажимая Enter или щёлкая по кнопке с плюсом
+- Нажмите `TAB` или щёлкните на кнопке с плюсом для просмотра панели инструментов
+- Нажмите `TAB` еще раз, чтобы открыть панель инструментов, и выберите нужный вам блок. Затем нажмите Enter.
 
 
  ![](https://github.com/editor-js/list/raw/master/assets/example.gif)
 
-- Select a text fragment and apply a style or insert a link from the Inline Toolbar
+- Выберите фрагмент текста и примените стиль или вставьте ссылку с панели инструментов "Вставка".
 
 ![](https://capella.pics/7ccbcfcd-1c49-4674-bea7-71021468a1bd.jpg)
 
-- Use the «three-dots» button on the right to open Block Settings. From here, you can move and delete a Block
-or apply a Tool's settings, if it provided. For example, you can set a Heading level or List style.
+- Используйте кнопку "три точки" справа, чтобы открыть Настройки блока. Отсюда можно перемещать и удалять блок
+или применить настройки инструмента, если они предусмотрены. Например, можно задать уровень заголовка или стиль списка.
 
 ![](https://capella.pics/01a55381-46cd-47c7-b92e-34765434f2ca.jpg)
 
-### Shortcuts
+### Ярлыки
 
-A few shortcuts are preset as available.
+Несколько ярлыков предустановлены как доступные.
 
 Shortcut | Action | Restrictions
 -- | -- | --
-`TAB` | Show/leaf a Toolbox. | On empty block
-`SHIFT+TAB` | Leaf back a Toolbox. | While Toolbox is opened
-`ENTER` | Create a Block | While Toolbox is opened and some Tool is selected
-`CMD+B` | Bold style | On selection
-`CMD+I` | Italic style | On selection
-`CMD+K` | Insert a link | On selection
+`TAB` | Показать/открыть панель инструментов. | На пустом блоке
+`SHIFT+TAB` | Листайте назад Ящик с инструментами. | Пока открыта панель инструментов
+`ENTER` | Создать блок | Когда открыта панель инструментов и выбран какой-либо инструмент
+`CMD+B` | Смелый стиль | На выбор
+`CMD+I` | Курсивный стиль | На выбор
+`CMD+K` | Вставить ссылку | На выбор
 
-Each Tool can also have its own shortcuts. These are specified in the configuration of the Tool, for example:
+Каждый инструмент также может иметь свои собственные ярлыки. Они задаются в конфигурации инструмента, например:
 
 ```js
 var editor = new EditorJS({
@@ -113,15 +114,15 @@ var editor = new EditorJS({
 ```
 
 
-## Installation Guide
+## Руководство по установке
 
-There are few steps to run Editor.js on your site.
+Чтобы запустить Editor.js на своем сайте, нужно выполнить несколько шагов.
 
-1. [Load Editor's core](#load-editors-core)
-2. [Load Tools](#load-tools)
-3. [Initialize Editor's instance](#create-editor-instance)
+1. [Загрузить ядро редактора](#load-editors-core)
+2. [Загрузить инструменты](#load-tools)
+3. [Инициализировать экземпляр редактора](#create-editor-instance)
 
-### Step 1. Load Editor's core
+### Шаг 1. Загрузить ядро редактора
 
 Get Editor.js itself. It is a [minified script](dist/editor.js) with Editor's core and some default must-have tools.
 
