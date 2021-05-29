@@ -124,69 +124,69 @@ var editor = new EditorJS({
 
 ### Шаг 1. Загрузить ядро редактора
 
-Get Editor.js itself. It is a [minified script](dist/editor.js) with Editor's core and some default must-have tools.
+Получите сам файл Editor.js. Это [минифицированный скрипт](dist/editor.js) с ядром редактора и некоторыми необходимыми по умолчанию инструментами.
 
-Choose the most usable method of getting Editor for you.
+Выберите наиболее удобный для вас способ получения Editor.
 
-- Node package
-- Source from CDN
-- Local file from project
+- Node пакет
+- Источник из CDN
+- Локальный файл из проекта
 
-##### Option A. NPM install
+##### Вариант A. Установка NPM
 
-Install the package via NPM or Yarn
+Установите пакет с помощью NPM или Yarn
 
 ```shell
 npm i @editorjs/editorjs
 ```
 
-Include module in your application
+Включите модуль в свое приложение
 
 ```javascript
 import EditorJS from '@editorjs/editorjs';
 ```
 
-##### Option B. Use a CDN
+##### Вариант B. Используйте CDN
 
-You can load EditorJS directly from from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@editorjs/editorjs).
+Вы можете загрузить EditorJS непосредственно из [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@editorjs/editorjs).
 
 `https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest`
 
-For example, place this in your HTML:
+Например, поместите это в HTML:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
 ```
 
-##### Option C. Save source within your project
+##### Вариант C. Сохраните исходный текст в проекте
 
-Copy the [editor.js](dist/editor.js) file to your project and load it.
+Скопируйте файл [editor.js](dist/editor.js) в свой проект и загрузите его.
 
 ```html
 <script src="editor.js"></script>
 ```
 
-### Step 2. Load the Tools that you want to make available
+### Шаг 2. Загрузите инструменты, которые вы хотите сделать доступными
 
-Each Block is represented by a [Tool](docs/tools.md). Tools are simple external scripts with their own logic. For example, there is a [Header](https://github.com/editor-js/header) Tool into which you type your heading text. If you want to be able to use this, install the Header Tool the same way as the Editor (Node.js, CDN, local file).
+Каждый блок представлен [Инструментом](docs/tools.md). Инструменты - это простые внешние скрипты со своей собственной логикой. Например, есть инструмент [Заголовок](https://github.com/editor-js/header), в который вводится текст заголовка. Если вы хотите иметь возможность использовать это, установите Header Tool так же, как и редактор (Node.js, CDN, локальный файл).
 
-**Example:** use Header from CDN
+**Пример:** использование заголовка из CDN
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/codex.editor.header@2.0.4/dist/bundle.js"></script>
 ```
 
-Check [Editor.js's community](https://github.com/editor-js/) to see more ready-to-use Tools.
+Загляните в сообщество [Editor.js's community](https://github.com/editor-js/), чтобы увидеть больше готовых к использованию инструментов.
 
-### Step 3. Create Editor instance
+### Шаг 3. Создайте экземпляр редактора
 
-Create an instance of Editor.js and pass [Configuration Object](types/configs/editor-config.d.ts) with `holderId` and tools list.
+Создайте экземпляр Editor.js и передайте [Configuration Object](types/configs/editor-config.d.ts) с `holderId` и списком инструментов.
 
 ```html
 <div id="editorjs"></div>
 ```
 
-You can create a simple Editor with only default Paragraph Tool by passing a string with element's Id (wrapper for Editor) as a configuration param. Or use the default `editorjs` id for wrapper.
+Вы можете создать простой редактор с только стандартным инструментом Paragraph Tool, передав строку с Id элемента (обертка для редактора) в качестве параметра конфигурации. Или используйте стандартный идентификатор `editorjs` для обертки.
 
 ```javascript
 var editor = new EditorJS(); /** Zero-configuration */
@@ -196,18 +196,18 @@ var editor = new EditorJS(); /** Zero-configuration */
 var editor = new EditorJS('editorjs');
 ````
 
-Or pass a whole settings object.
+Или передать целый объект настроек.
 
 ```javascript
 var editor = new EditorJS({
     /**
-     * Create a holder for the Editor and pass its ID
+     * Создайте держатель для редактора и передайте его ID
      */
     holder : 'editorjs',
 
     /**
-     * Available Tools list.
-     * Pass Tool's class or Settings object for each Tool you want to use
+     * Список доступных инструментов.
+     * Передайте класс инструмента или объект Settings для каждого инструмента, который вы хотите использовать
      */
     tools: {
         header: {
@@ -218,15 +218,15 @@ var editor = new EditorJS({
     },
 
     /**
-     * Previously saved data that should be rendered
+     * Ранее сохранённые данные, которые должны быть отображены
      */
     data: {}
 });
 ```
 
-### Saving Data
+### Сохранение данных
 
-Call `editor.save()` and handle returned Promise with saved data.
+Вызовите `editor.save()` и обработайте возвращённый Promise с сохранёнными данными.
 
 ```javascript
 editor.save()
@@ -235,20 +235,20 @@ editor.save()
   });
 ```
 
-### Example
+### Пример
 
-Take a look at the [example.html](example/example.html) to view more detailed examples.
+Посмотрите [example.html](example/example.html) для просмотра более подробных примеров.
 
-## Credits and references
+## Нет данных (истекло время ожидания отправки данных).
 
 - We use [HTMLJanitor](https://github.com/guardian/html-janitor) module in our Sanitizer module.
 
-## About team
+## О команде
 
-We are CodeX and we build products for developers and makers.
+Мы - CodeX, и мы создаем продукты для разработчиков и производителей.
 
-Follow us on Twitter: [twitter.com/codex_team](https://twitter.com/codex_team)
+Следуйте за нами в Twitter: [twitter.com/codex_team](https://twitter.com/codex_team)
 
-Feel free to contact: <a href="mailto:team@codex.so?subject=Editor.js feedback">team@codex.so</a>
+Не стесняйтесь обращаться: <a href="mailto:team@codex.so?subject=Editor.js feedback">team@codex.so</a>
 
 [codex.so](https://codex.so)
