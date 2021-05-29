@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Editor.js 🤩🧦🤨 example</title>
+  <title>Editor.js 🤩🧦🤨 пример</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
   <link href="assets/demo.css" rel="stylesheet">
   <script src="assets/json-preview.js"></script>
@@ -14,9 +14,9 @@
       <a class="ce-example__header-logo" href="https://codex.so/editor">Editor.js 🤩🧦🤨</a>
 
       <div class="ce-example__header-menu">
-        <a href="https://github.com/editor-js" target="_blank">Plugins</a>
-        <a href="https://editorjs.io/usage" target="_blank">Usage</a>
-        <a href="https://editorjs.io/configuration" target="_blank">Configuration</a>
+        <a href="https://github.com/editor-js" target="_blank">Плагины</a>
+        <a href="https://editorjs.io/usage" target="_blank">Использование</a>
+        <a href="https://editorjs.io/configuration" target="_blank">Конфигурация</a>
         <a href="https://editorjs.io/creating-a-block-tool" target="_blank">API</a>
       </div>
     </div>
@@ -41,18 +41,18 @@
       <pre class="ce-example__output-content" id="output"></pre>
 
       <div class="ce-example__output-footer">
-        <a href="https://codex.so" style="font-weight: bold;">Made by CodeX</a>
+        <a href="https://codex.so" style="font-weight: bold;">Сделано в CodeX</a>
       </div>
     </div>
   </div>
 
-  <!-- Load Tools -->
+  <!-- Загрузить инструменты -->
   <!--
-   You can upload Tools to your project's directory and use as in example below.
+   Вы можете загрузить Tools в каталог вашего проекта и использовать как в примере ниже.
 
-   Also you can load each Tool from CDN or use NPM/Yarn packages.
+   Также вы можете загрузить каждый инструмент из CDN или использовать пакеты NPM/Yarn.
 
-   Read more in Tool's README file. For example:
+   Более подробную информацию можно найти в файле README инструмента. Например:
    https://github.com/editor-js/header#installation
    -->
   <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
@@ -76,46 +76,46 @@
   <!-- Initialization -->
   <script>
     /**
-     * To initialize the Editor, create a new instance with configuration object
-     * @see docs/installation.md for mode details
+     * Чтобы инициализировать редактор, создайте новый экземпляр с объектом конфигурации
+     * @см. docs/installation.md для получения подробной информации о режиме
      */
     var editor = new EditorJS({
       /**
-       * Enable/Disable the read only mode
+       * Включить/выключить режим только для чтения
        */
       readOnly: false,
 
       /**
-       * Wrapper of Editor
+       * Обёртка редактора
        */
       holder: 'editorjs',
 
       /**
-       * Common Inline Toolbar settings
-       * - if true (or not specified), the order from 'tool' property will be used
-       * - if an array of tool names, this order will be used
+       * Общие настройки встроенной панели инструментов
+       * - если true (или не указано), будет использоваться порядок из свойства 'tool'
+       * - если массив названий инструментов, то будет использоваться этот порядок
        */
       // inlineToolbar: ['link', 'marker', 'bold', 'italic'],
       // inlineToolbar: true,
 
       /**
-       * Tools list
+       * Список инструментов
        */
       tools: {
         /**
-         * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
+         * Каждый инструмент является плагином. Передайте их через опцию 'class' с необходимыми настройками {@link docs/tools.md}
          */
         header: {
           class: Header,
           inlineToolbar: ['marker', 'link'],
           config: {
-            placeholder: 'Header'
+            placeholder: 'Заголовок'
           },
           shortcut: 'CMD+SHIFT+H'
         },
 
         /**
-         * Or pass class directly without any configuration
+         * Или передавать класс напрямую без какой-либо конфигурации
          */
         image: SimpleImage,
 
@@ -134,7 +134,7 @@
           class: Quote,
           inlineToolbar: true,
           config: {
-            quotePlaceholder: 'Enter a quote',
+            quotePlaceholder: 'Введите цитату',
             captionPlaceholder: 'Quote\'s author',
           },
           shortcut: 'CMD+SHIFT+O'
@@ -172,12 +172,12 @@
       },
 
       /**
-       * This Tool will be used as default
+       * Этот инструмент будет использоваться по умолчанию
        */
       // defaultBlock: 'paragraph',
 
       /**
-       * Initial Editor data
+       * Исходные данные редактора
        */
       data: {
         blocks: [
@@ -191,13 +191,13 @@
           {
             type : 'paragraph',
             data : {
-              text : 'Hey. Meet the new Editor. On this page you can see it in action — try to edit this text. Source code of the page contains the example of connection and configuration.'
+              text : 'Эй. Познакомьтесь с новым редактором. На этой странице вы можете увидеть его в действии - попробуйте отредактировать этот текст. Исходный код страницы содержит пример подключения и настройки.'
             }
           },
           {
             type: "header",
             data: {
-              text: "Key features",
+              text: "Основные характеристики",
               level: 3
             }
           },
@@ -205,9 +205,9 @@
             type : 'list',
             data : {
               items : [
-                'It is a block-styled editor',
-                'It returns clean data output in JSON',
-                'Designed to be extendable and pluggable with a simple API',
+                'Это редактор в стиле блокчейн',
+                'Он возвращает чистые данные в формате JSON',
+                'Спроектирован как расширяемый и подключаемый с помощью простого API',
               ],
               style: 'unordered'
             }
@@ -215,14 +215,14 @@
           {
             type: "header",
             data: {
-              text: "What does it mean «block-styled editor»",
+              text: "Что значит «редактор в стиле блока»",
               level: 3
             }
           },
           {
             type : 'paragraph',
             data : {
-              text : 'Workspace in classic editors is made of a single contenteditable element, used to create different HTML markups. Editor.js <mark class=\"cdx-marker\">workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc</mark>. Each of them is an independent contenteditable element (or more complex structure) provided by Plugin and united by Editor\'s Core.'
+              text : 'Рабочая область в классических редакторах состоит из одного contenteditable элемента, используемого для создания различных HTML-разметок. Editor.js <mark class=\"cdx-marker\">workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc</mark>. Each of them is an independent contenteditable element (or more complex structure) provided by Plugin and united by Editor\'s Core.'
             }
           },
           {
@@ -234,7 +234,7 @@
           {
             type: "header",
             data: {
-              text: "What does it mean clean data output",
+              text: "Что означает чистый вывод данных",
               level: 3
             }
           },
