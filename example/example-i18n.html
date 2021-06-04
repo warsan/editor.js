@@ -1,6 +1,6 @@
 <!--
-  This page contains example of editor.js internalization.
-  See <script> section -> i18n property of the configuration object
+  Эта страница содержит пример интернализации editor.js.
+  См. <script> section -> i18n свойство объекта конфигурации
 
   \ (•◡•) /
 -->
@@ -20,9 +20,9 @@
     <a class="ce-example__header-logo" href="https://codex.so/editor">Editor.js 🤩🧦🤨</a>
 
     <div class="ce-example__header-menu">
-      <a href="https://github.com/editor-js" target="_blank">Plugins</a>
-      <a href="https://editorjs.io/usage" target="_blank">Usage</a>
-      <a href="https://editorjs.io/configuration" target="_blank">Configuration</a>
+      <a href="https://github.com/editor-js" target="_blank">Плагины</a>
+      <a href="https://editorjs.io/usage" target="_blank">Использование</a>
+      <a href="https://editorjs.io/configuration" target="_blank">Конфигурация</a>
       <a href="https://editorjs.io/creating-a-block-tool" target="_blank">API</a>
     </div>
   </div>
@@ -37,69 +37,69 @@
     <pre class="ce-example__output-content" id="output"></pre>
 
     <div class="ce-example__output-footer">
-      <a href="https://codex.so" style="font-weight: bold;">Made by CodeX</a>
+      <a href="https://codex.so" style="font-weight: bold;">Сделано в CodeX</a>
     </div>
   </div>
 </div>
 
 <!-- Load Tools -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script><!-- Image -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Code -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Warning -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Заголовок -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script><!-- Изображение -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Разделитель -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- Список -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Контрольный список -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Цитата -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Код -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Вставка -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Таблица -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Ссылка -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Предупреждение -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Маркер -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Инлайн-код -->
 
-<!-- Load Editor.js's Core -->
+<!-- Загрузить ядро Editor.js -->
 <script src="../dist/editor.js"></script>
 
-<!-- Initialization -->
+<!-- Инициализация -->
 <script>
   /**
-   * Saving button
+   * Кнопка сохранения
    */
   const saveButton = document.getElementById('saveButton');
 
   /**
-   * To initialize the Editor, create a new instance with configuration object
+   * Чтобы инициализировать редактор, создайте новый экземпляр с объектом конфигурации
    * @see docs/installation.md for mode details
    */
   var editor = new EditorJS({
     /**
-     * Wrapper of Editor
+     * Обёртка редактора
      */
     holder: 'editorjs',
 
     /**
-     * Tools list
+     * Список инструментов
      */
     tools: {
       paragraph: {
         config: {
-          placeholder: "Enter something"
+          placeholder: "Введите что-нибудь"
         }
       },
       /**
-       * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
+       * Каждый инструмент является плагином. Передайте их через опцию 'class' с необходимыми настройками {@link docs/tools.md}
        */
       header: {
         class: Header,
         inlineToolbar: ['link'],
         config: {
-          placeholder: 'Header'
+          placeholder: 'Заголовок'
         },
         shortcut: 'CMD+SHIFT+H'
       },
 
       /**
-       * Or pass class directly without any configuration
+       * Или передайте класс напрямую без какой-либо конфигурации
        */
       image: ImageTool,
 
@@ -118,8 +118,8 @@
         class: Quote,
         inlineToolbar: true,
         config: {
-          quotePlaceholder: 'Enter a quote',
-          captionPlaceholder: 'Quote\'s author',
+          quotePlaceholder: 'Введите цитату',
+          captionPlaceholder: 'Автор цитаты',
         },
         shortcut: 'CMD+SHIFT+O'
       },
@@ -155,18 +155,18 @@
 
     },
     /**
-     * To provide localization of the editor.js you need to provide 'i18n' option with 'messages' dictionary:
+     * Чтобы обеспечить локализацию editor.js, необходимо предоставить опцию 'i18n' в словаре 'messages':
      *
-     * 1. At the 'ui' section of 'messages' there are translations for the internal editor.js UI elements.
-     *   You can create or find/download a dictionary for your language
+     * 1. В разделе 'ui' раздела 'messages' есть переводы для внутренних элементов пользовательского интерфейса editor.js.
+     *    Вы можете создать или найти/скачать словарь для вашего языка
      *
-     * 2. As long as tools list is a user-specific thing (we do not know which tools you use and under which names),
-     *    so we can't provide a ready-to-use tool names dictionary.
-     *    There is a 'toolNames' section for that reason. Put translations for the names of your tools there.
+     * 2. Пока список инструментов зависит от конкретного пользователя (мы не знаем, какие инструменты вы используете и под какими именами), 
+     *    поэтому мы не можем предоставить готовый к использованию словарь названий инструментов.
+     *    Для этого существует раздел "Имена инструментов". Поместите туда переводы названий ваших инструментов.
      *
-     * 3. Also, the UI of the tools you use is also invisible to editor.js core.
-     *    To pass translations for specific tools (that supports I18n API), there are 'tools' and 'blockTunes' section.
-     *    Pass dictionaries for specific plugins through them.
+     * 3. Кроме того, пользовательский интерфейс используемых вами инструментов также невидим для ядра editor.js.
+     *    Чтобы передать переводы для конкретных инструментов (поддерживающих I18n API), существуют разделы 'tools' и 'blockTunes'.
+     *    Передавайте через них словари для конкретных плагинов.
      */
     i18n: {
       /**
@@ -174,7 +174,7 @@
        */
       messages: {
         /**
-         * Other below: translation of different UI components of the editor.js core
+         * Другие ниже: перевод различных компонентов пользовательского интерфейса ядра editor.js
          */
         "ui": {
           "blockTunes": {
@@ -196,7 +196,7 @@
         },
 
         /**
-         * Section for translation Tool Names: both block and inline tools
+         * Раздел для перевода названий инструментов: как блочные, так и линейные инструменты
          */
         "toolNames": {
           "Text": "Параграф",
@@ -218,29 +218,29 @@
         },
 
         /**
-         * Section for passing translations to the external tools classes
+         * Раздел для передачи переводов классам внешних инструментов
          */
         "tools": {
           /**
-           * Each subsection is the i18n dictionary that will be passed to the corresponded plugin
-           * The name of a plugin should be equal the name you specify in the 'tool' section for that plugin
+           * Каждый подраздел представляет собой словарь i18n, который будет передан соответствующему плагину
+           * Имя плагина должно быть равно имени, которое вы указали в разделе 'tool' для этого плагина
            */
-          "warning": { // <-- 'Warning' tool will accept this dictionary section
+          "warning": { // <-- Инструмент 'Предупреждение' примет этот раздел словаря
             "Title": "Название",
             "Message": "Сообщение",
           },
 
           /**
-           * Link is the internal Inline Tool
+           * Ссылка - это внутренний инструмент Inline Tool
            */
           "link": {
             "Add a link": "Вставьте ссылку"
           },
           /**
-           * The "stub" is an internal block tool, used to fit blocks that does not have the corresponded plugin
+           * "корешок" - внутренний инструмент блока, используемый для установки блоков, для которых нет соответствующего плагина
            */
           "stub": {
-            'The block can not be displayed correctly.': 'Блок не может быть отображен'
+            'The block can not be displayed correctly.': 'Блок не может быть отображён'
           },
           "image": {
             "Caption": "Подпись",
@@ -271,14 +271,14 @@
         },
 
         /**
-         * Section allows to translate Block Tunes
+         * Раздел позволяет перевести Block Tunes
          */
         "blockTunes": {
           /**
-           * Each subsection is the i18n dictionary that will be passed to the corresponded Block Tune plugin
-           * The name of a plugin should be equal the name you specify in the 'tunes' section for that plugin
+           * Каждый подраздел представляет собой словарь i18n, который будет передан соответствующему плагину Block Tune.
+           * Имя плагина должно быть равно имени, которое вы указали в разделе 'tunes' для этого плагина
            *
-           * Also, there are few internal block tunes: "delete", "moveUp" and "moveDown"
+           * Кроме того, существует малость настроек внутренних блоков: "delete", "moveUp" и "moveDown"
            */
           "delete": {
             "Delete": "Удалить"
@@ -294,7 +294,7 @@
     },
 
     /**
-     * Initial Editor data
+     * Исходные данные редактора
      */
     data: {
       blocks: [
@@ -308,13 +308,13 @@
         {
           type : 'paragraph',
           data : {
-            text : 'Hey. Meet the new Editor. On this page you can see it in action — try to edit this text. Source code of the page contains the example of connection and configuration.'
+            text : 'Эй. Познакомьтесь с новым редактором. На этой странице вы можете увидеть его в действии - попробуйте отредактировать этот текст. Исходный код страницы содержит пример подключения и настройки.'
           }
         },
         {
           type: "header",
           data: {
-            text: "Key features",
+            text: "Основные характеристики",
             level: 3
           }
         },
@@ -322,9 +322,9 @@
           type : 'list',
           data : {
             items : [
-              'It is a block-styled editor',
-              'It returns clean data output in JSON',
-              'Designed to be extendable and pluggable with a simple API',
+              'Это редактор в стиле блокчейн',
+              'Он возвращает чистые данные в формате JSON',
+              'Спроектирован как расширяемый и подключаемый с помощью простого API',
             ],
             style: 'unordered'
           }
@@ -332,14 +332,14 @@
         {
           type: "header",
           data: {
-            text: "What does it mean «block-styled editor»",
+            text: "Что означает «блок-стилизированный редактор»", 
             level: 3
           }
         },
         {
           type : 'paragraph',
           data : {
-            text : 'Workspace in classic editors is made of a single contenteditable element, used to create different HTML markups. Editor.js <mark class=\"cdx-marker\">workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc</mark>. Each of them is an independent contenteditable element (or more complex structure) provided by Plugin and united by Editor\'s Core.'
+            text : 'Рабочая область в классических редакторах состоит из одного contenteditable элемента, используемого для создания различных HTML-разметок. Editor.js <mark class=\"cdx-marker\">workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc</mark>. Each of them is an independent contenteditable element (or more complex structure) provided by Plugin and united by Editor\'s Core.'
           }
         },
         {
@@ -351,14 +351,14 @@
         {
           type: "header",
           data: {
-            text: "What does it mean clean data output",
+            text: "Что означает чистый вывод данных",
             level: 3
           }
         },
         {
           type : 'paragraph',
           data : {
-            text : 'Classic WYSIWYG-editors produce raw HTML-markup with both content data and content appearance. On the contrary, Editor.js outputs JSON object with data of each Block. You can see an example below'
+            text : 'Классические WYSIWYG-редакторы создают необработанную HTML-разметку, содержащую как данные о содержимом, так и его внешний вид. On the contrary, Editor.js outputs JSON object with data of each Block. You can see an example below'
           }
         },
         {
@@ -370,7 +370,7 @@
         {
           type : 'paragraph',
           data : {
-            text : 'Clean data is useful to sanitize, validate and process on the backend.'
+            text : 'Чистые данные полезно санировать, проверять и обрабатывать на бэкенде.'
           }
         },
         {
@@ -380,7 +380,7 @@
         {
           type : 'paragraph',
           data : {
-            text : 'We have been working on this project more than three years. Several large media projects help us to test and debug the Editor, to make its core more stable. At the same time we significantly improved the API. Now, it can be used to create any plugin for any task. Hope you enjoy. 😏'
+            text : 'Мы работаем над этим проектом уже более трех лет. Несколько крупных медиа-проектов помогают нам тестировать и отлаживать редактор, чтобы сделать его ядро более стабильным. В то же время мы значительно улучшили API. Теперь его можно использовать для создания любого плагина для любой задачи. Надеюсь, вам понравится. 😏'
           }
         },
         {
